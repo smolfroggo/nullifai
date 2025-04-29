@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nullifai's notes</title>
+  <style>
+    :root {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --accent: #bb86fc;
+      --link: #8ab4f8;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, serif;
+      line-height: 1.6;
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .post-list {
+      padding: 0;
+      margin: 0;
+    }
+    .post-list li {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    .post-list a {
+      color: var(--link);
+      text-decoration: none;
+      font-size: 1.25rem;
+    }
+    .post-list a:hover {
+      text-decoration: underline;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--link);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>nullifai's notes</h1>
+  </header>
+  <main id="app">
+    <section id="home">
+      <ul class="post-list">
+        <li><a href="#" id="post-link">hello world</a></li>
+      </ul>
+    </section>
+    <section id="post" style="display:none;">
+      <a href="#" class="back-link" id="back-link">&larr; Back</a>
+      <h1>hello world</h1>
+      <p>hello world</p>
+    </section>
+  </main>
+  <script>
+    const postLink = document.getElementById('post-link');
+    const backLink = document.getElementById('back-link');
+    const homeSection = document.getElementById('home');
+    const postSection = document.getElementById('post');
+
+    postLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      homeSection.style.display = 'none';
+      postSection.style.display = 'block';
+    });
+
+    backLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      postSection.style.display = 'none';
+      homeSection.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
+
